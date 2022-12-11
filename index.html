@@ -17,20 +17,37 @@
     </title>
   </head>
   <body>
-    <header>
-      <div class="container">
-        <img src="./images/logo.svg" alt="Fylo Logo" />
-        <nav>
+    <div class="wrapper">
+      <header>
+        <img class="logo" src="./images/logo.svg" alt="Fylo Logo" />
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-controls="main-nav"
+          aria-expanded="false"
+          aria-label="Menu"
+        >
+          <img
+            class="hamburger-icon"
+            src="./images/icon-hamburger.svg"
+            alt=""
+          />
+          <img class="close-icon" src="./images/icon-close.svg" alt="" />
+        </button>
+        <nav
+          class="main-nav"
+          id="main-nav"
+          data-visible="false"
+          aria-label="Main"
+        >
           <ul>
             <li><a href="">Features</a></li>
             <li><a href="">Team</a></li>
             <li><a href="">Sign In</a></li>
           </ul>
         </nav>
-      </div>
-    </header>
-    <main>
-      <div class="container">
+      </header>
+      <main>
         <section>
           <img src="./images/illustration-intro.png" alt="" />
           <h1>All your files in one secure location, accessible anywhere.</h1>
@@ -150,10 +167,8 @@
             <button type="submit">Get Started For Free</button>
           </form>
         </section>
-      </div>
-    </main>
-    <footer>
-      <div class="container">
+      </main>
+      <footer>
         <img src="./images/logo.svg" alt="Fylo Logo" />
         <div>
           <div>
@@ -187,7 +202,8 @@
             </ul>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </div>
+    <script src="./index.js"></script>
   </body>
 </html>
