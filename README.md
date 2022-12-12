@@ -17,9 +17,11 @@ This is a solution to the [Fylo dark theme landing page challenge on Frontend Me
 
 ### Screenshot
 
-<!-- ![Desktop View](./screenshot/screenshot_1.png)
+Desktop :
+![Desktop View](./screenshot/screenshot_1.png)
+
+Mobile :
 ![Mobile View](./screenshot/screenshot_2.png)
-![Mobile View with menu](./screenshot/screenshot_3.png) -->
 
 ### Links
 
@@ -33,9 +35,8 @@ This is a solution to the [Fylo dark theme landing page challenge on Frontend Me
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
+- Grid
 - Mobile-First Approach
-
-### What I learned
 
 ## Author
 
