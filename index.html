@@ -6,8 +6,8 @@
     <link
       rel="icon"
       type="image/png"
-      sizes="h32xh32"
-      href="./images/favicon-h32xh32.png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,6 +19,10 @@
     <title>
       Frontend Mentor | Fylo landing page with dark theme and features grid
     </title>
+    <script
+      src="https://kit.fontawesome.com/a210370963.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <header>
@@ -53,9 +57,9 @@
           aria-label="Main"
         >
           <ul>
-            <li><a href="">Features</a></li>
-            <li><a href="">Team</a></li>
-            <li><a href="">Sign In</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#">Team</a></li>
+            <li><a href="#">Sign In</a></li>
           </ul>
         </nav>
       </div>
@@ -75,14 +79,14 @@
               Access them wherever you need, share and collaborate with friends
               family, and co-workers.
             </p>
-            <a class="cta-button" href="">Get Started</a>
+            <a class="cta-button" href="#">Get Started</a>
           </div>
         </div>
       </section>
     </header>
     <main>
       <div class="main__wrapper">
-        <section class="features">
+        <section class="features" id="features">
           <div class="features__item">
             <img
               src="./images/icon-access-anywhere.svg"
@@ -148,7 +152,7 @@
               Securely share files and folders with friends, family and
               colleagues for live collaboration. No email attachments required.
             </p>
-            <a href=""
+            <a href="#"
               >See how Fylo works
               <img src="./images/icon-arrow.svg" aria-hidden="true" alt=""
             /></a>
@@ -215,37 +219,52 @@
       </div>
     </main>
     <footer>
-      <img src="./images/logo.svg" alt="Fylo Logo" />
-      <div>
-        <div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua
-          </p>
-          <p>+1-543-123-4567</p>
-          <p>example@fylo.com</p>
-        </div>
-        <div>
-          <nav>
+      <div class="footer__wrapper">
+        <img class="footer__logo" src="./images/logo.svg" alt="Fylo Logo" />
+        <div class="footer__body">
+          <div class="footer__contact">
+            <div class="contact__item">
+              <img src="./images/icon-location.svg" aria-hidden="true" alt="" />
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua
+              </p>
+            </div>
+            <div class="contact__item">
+              <img src="./images/icon-phone.svg" aria-hidden="true" alt="" />
+              <p>+1-543-123-4567</p>
+            </div>
+            <div class="contact__item">
+              <img src="./images/icon-email.svg" aria-hidden="true" alt="" />
+              <p>example@fylo.com</p>
+            </div>
+          </div>
+          <nav aria-label="footer">
             <ul>
-              <li><a href="">About Us</a></li>
-              <li><a href="">Jobs</a></li>
-              <li><a href="">Press</a></li>
-              <li><a href="">Blog</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Jobs</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Blog</a></li>
             </ul>
             <ul>
-              <li><a href="">Contact Us</a></li>
-              <li><a href="">Terms</a></li>
-              <li><a href="">Privacy</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Terms</a></li>
+              <li><a href="#">Privacy</a></li>
             </ul>
           </nav>
-        </div>
-        <div>
-          <ul>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-          </ul>
+          <div class="social__profiles">
+            <ul>
+              <li>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </footer>
