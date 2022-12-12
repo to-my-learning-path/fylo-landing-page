@@ -15,7 +15,7 @@
   /* neutral */
   --white: hsl(0, 0%, 100%);
 
-  --font-size: 16px;
+  --font-size: 14px;
 
   --font-family-primary: "Open Sans", sans-serif;
   --font-family-secondary: "Raleway", sans-serif;
@@ -82,18 +82,44 @@ a {
 body {
   background-color: var(--dark-blue-intro);
   color: var(--white);
-  font-size: var(--font-size);
+  font-size: clamp(var(--font-size), 0.8rem + 0.375vw, 1.25rem);
   font-family: var(--font-family-primary);
-}
 
-.wrapper {
-  max-width: 78.6%;
+  max-width: 1536px;
   margin-inline: auto;
 }
 
-/* Header */
+h1,
+h2,
+h3,
+.cta-button {
+  font-family: var(--font-family-secondary);
+  font-weight: bold;
+}
+
+.cta-button {
+  display: inline-block;
+  color: white;
+  background: linear-gradient(var(--cyan) -50%, var(--blue)) 50%;
+  padding: 1rem 5rem;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  filter: brightness(1.1);
+}
+
+/***** Header *****/
 header {
-  padding-block: 3.125rem;
+  background-image: url(./images/bg-curvy-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+}
+
+.header {
+  padding-block: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -101,8 +127,13 @@ header {
   font-family: var(--font-family-secondary);
 }
 
+.header__wrapper {
+  max-width: 90%;
+  margin-inline: auto;
+}
+
 .logo {
-  width: 42.7%;
+  width: 25%;
 }
 
 .nav-toggle {
@@ -118,6 +149,34 @@ header {
 
 .nav-toggle[aria-expanded="true"] .hamburger-icon {
   display: none;
+}
+
+/* Hero */
+
+.hero {
+  padding-inline: 2rem;
+}
+
+.hero__wrapper {
+  max-width: 90%;
+  margin-inline: auto;
+}
+
+.hero__image {
+  margin-inline: auto;
+}
+
+.hero__content {
+  text-align: center;
+  padding-block: 2rem;
+}
+
+.hero__content > *:not(:last-child) {
+  padding-block-end: 1.5rem;
+}
+
+.hero__content h1 {
+  font-family: var(--font-family-secondary);
 }
 
 @media screen and (max-width: 767px) {
@@ -149,6 +208,9 @@ header {
 }
 
 @media screen and (min-width: 768px) {
+  .logo {
+    width: 20%;
+  }
   .main-nav {
     display: block;
   }
@@ -157,10 +219,259 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
+    gap: 3rem;
+  }
+
+  .main-nav ul li a:hover {
+    text-decoration: underline;
   }
 
   .nav-toggle {
     display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  header {
+    background-image: url(./images/bg-curvy-desktop.svg);
+  }
+
+  .header {
+    margin-top: 1rem;
+  }
+
+  .header__wrapper {
+    max-width: 80%;
+  }
+
+  .hero__wrapper {
+    max-width: 60%;
+  }
+
+  .main-nav ul {
+    gap: 5rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .header {
+    margin-top: 2rem;
+  }
+
+  .logo {
+    width: 15%;
+  }
+}
+
+/***** Main *****/
+
+.main__wrapper {
+  max-width: 90%;
+  margin-inline: auto;
+}
+
+main {
+  background-color: var(--dark-blue-main);
+  padding-block: 5rem;
+}
+
+main section {
+  margin-block-end: 5rem;
+}
+
+/* Features */
+
+.features {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 5rem;
+}
+
+.features__item {
+  text-align: center;
+}
+
+.features__item > *:not(:last-child) {
+  padding-block-end: 1.5rem;
+}
+
+.features__item img {
+  margin-inline: auto;
+}
+
+/* Demo */
+
+.demo {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+.demo__content > *:not(:last-child) {
+  padding-block-end: 1rem;
+}
+
+.demo__content a {
+  color: var(--cyan);
+  position: relative;
+  padding-block-end: 0.25rem;
+  border-bottom: 1px solid var(--cyan);
+}
+
+.demo__content a:hover {
+  color: white;
+  border-color: white;
+}
+
+.demo__content a:hover img {
+  filter: brightness(0) invert(1);
+}
+
+.demo__content a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.demo__content a img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* testimonials */
+
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  position: relative;
+  margin: 8rem 1rem;
+}
+
+.testimonials::before {
+  content: "";
+  position: absolute;
+  top: -1.5rem;
+  left: 0;
+  width: 2rem;
+  aspect-ratio: 1;
+  background-image: url(./images/bg-quotes.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.testimonials__item {
+  background-color: var(--dark-blue-testimonials);
+  padding: 1rem;
+}
+
+.testimonials__profile {
+  display: flex;
+  align-items: center;
+  margin-block-start: 1rem;
+}
+
+.testimonials__profile img {
+  border-radius: 10rem;
+  margin-inline-end: 1rem;
+  max-width: 2.5rem;
+}
+
+.profile__info P:first-child {
+  font-weight: bold;
+}
+.profile__info P:last-child {
+  font-size: smaller;
+}
+
+/* Take Action */
+
+.take-action {
+  background-color: var(--dark-blue-intro);
+  padding: 2rem;
+  text-align: center;
+}
+
+.take-action > *:not(:last-child) {
+  padding-block-end: 1.5rem;
+}
+
+.take-action form input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 2rem;
+  margin-block-end: 1rem;
+}
+
+.take-action form button {
+  width: 100%;
+  padding: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .features {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .demo {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .take-action form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .take-action form input {
+    margin-block-end: 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .main__wrapper {
+    max-width: 80%;
+  }
+
+  .features {
+    padding-inline: 3rem;
+  }
+
+  .features__item {
+    max-width: 27rem;
+    margin-inline: auto;
+  }
+
+  .testimonials {
+    flex-direction: row;
+  }
+
+  .testimonials__item {
+    padding: 1.25rem;
+  }
+
+  .take-action {
+    padding: 3rem 5rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  main section {
+    margin-block-end: 7rem;
+  }
+  .take-action {
+    max-width: 80%;
+    margin-inline: auto;
+  }
+
+  .testimonials__item {
+    padding: 2rem;
   }
 }
